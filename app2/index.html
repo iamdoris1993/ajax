@@ -97,6 +97,7 @@
 
 $("#delCancel").on("click",function(){
   $("#modal").hide();
+  $("body").css("overflow","auto")
 })
 
 
@@ -126,10 +127,12 @@ function query(cl){
     $(".del-user").on("click",function(){
       let user = $(this).data("del")
       console.log(user)
+      $("body").css("overflow","hidden")
       // del(user)
       $("#delBtn").attr("data-uid",user)
       // document.getElementById("modal").style.display="block";
       $("#modal").show();
+      $("#modal").css("top",$(document).scrollTop())
     })
   })
 }
@@ -145,6 +148,7 @@ function del(id){
     console.log(res)
     let cl = $("#class").val();
     query(cl);
+    $("body").css("overflow","auto")
   })
 }
 
