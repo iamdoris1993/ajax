@@ -3,6 +3,7 @@
 
 include_once "connect.php";
 
+//sprintf 數字轉字串
 $class='1'.sprintf("%02d",$_GET["class"]); //%d正整數 02:兩位數(空的補0)
 
 //撈出班級學生
